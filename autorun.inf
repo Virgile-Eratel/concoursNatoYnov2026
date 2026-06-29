@@ -1,0 +1,5 @@
+[AutoRun]
+
+shellexecute=index.html
+icon=FACOM_SCANDIAG\img\ScanDiag.ico
+label=FACOM - SCANDIAG

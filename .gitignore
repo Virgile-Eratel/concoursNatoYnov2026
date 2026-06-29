@@ -1,0 +1,13 @@
+# Binaires vendeur FACOM/TEXA — non versionnés (trop volumineux, non-source,
+# récupérables depuis le disque/CD FACOM SCANDIAG original).
+# Bloquaient le push GitHub (limite 100 Mo, ex: Facom_ScanDiag_setup.exe = 237 Mo).
+*.exe
+
+# OS / éditeur
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Scratchpad / temporaires
+/tmp/
+*.log
