@@ -170,18 +170,23 @@ angulairement, observe la déformation de cette ligne → le MCU/PC reconstruit 
 
 ## 6. Cartographie du champ des possibles (Phase 2)
 
-### 6.1 Fonctions matérielles RÉUTILISABLES en l'état
+### 6.1 Fonctions matérielles réutilisables en l'état
 
-| Fonction | Réutilisable pour | Maturité |
-|---|---|:--:|
-| 🟢 **Laser vert 3R modulable** | pointage, ligne de référence, mesure par triangulation, alignement | ✅ Direct |
-| 🟢 **Caméra CMOS 1 MP 30 fps** | vision embarquée, OCR, détection, scan, microscopie | ✅ Direct |
-| 🟢 **Bluetooth SPP** | télémétrie sans fil vers smartphone/PC | ✅ Direct |
-| 🟢 **Batterie Li-Ion 3,7 V + charge USB** | autonomie nomade, recharge standard | ✅ Direct |
-| 🟢 **IHM bouton + LED RGB** | contrôle simple + feedback d'état | ✅ Direct |
-| 🟢 **Aimant** | fixation main-libre sur surface ferromagnétique | ✅ Direct |
-| 🟡 **MCU reprogrammable** | logique applicative custom | 🔧 après reflash |
-| 🟡 **Couple laser+caméra calibré** | scanner 3D / profilomètre générique | 🔧 recalibration |
+**Réutilisables directement.** Plusieurs fonctions sont immédiatement exploitables, sans
+modification matérielle particulière. Le laser vert de classe 3R, modulable, sert au pointage, à
+la projection d'une ligne de référence, à la mesure par triangulation et à l'alignement. La caméra
+OV9712 (1 MP, 30 images par seconde) ouvre la voie à la vision embarquée, à la reconnaissance
+optique, à la détection, à la numérisation et à la microscopie. La liaison Bluetooth en port série
+assure la télémétrie sans fil vers un smartphone ou un PC. La batterie Lithium-Ion 3,7 V, rechargeable
+par USB, fournit une autonomie nomade et une recharge standardisée. L'interface, composée d'un bouton
+multifonction et d'une LED RGB, offre un contrôle simple assorti d'un retour d'état visuel. Enfin,
+l'aimant permet une fixation main-libre sur toute surface ferromagnétique.
+
+**Réutilisables après adaptation.** Deux fonctions demandent un travail préalable. Le microcontrôleur
+est réutilisable comme support de logique applicative custom, mais cela suppose d'avoir d'abord
+reflashé un firmware ouvert à la place du firmware d'origine. Le couple laser-caméra peut servir de
+scanner 3D ou de profilomètre générique, à condition de recalibrer la géométrie optique qui était
+figée en usine pour la mesure des disques de frein.
 
 ### 6.2 Fonctions/extensions AJOUTABLES
 
@@ -206,7 +211,7 @@ angulairement, observe la déformation de cette ligne → le MCU/PC reconstruit 
 
 ```mermaid
 flowchart LR
-    subgraph EXIST["✅ DISPONIBLE EN L'ÉTAT"]
+    subgraph EXIST["DISPONIBLE EN L'ÉTAT"]
         L[Laser vert 3R]
         C[Caméra OV9712 1MP]
         B[Bluetooth SPP]
@@ -214,7 +219,7 @@ flowchart LR
         BA[Li-Ion 3.7V + charge USB]
         M[Aimant]
     end
-    MCUx[🧠 MCU reprogrammable]
+    MCUx[MCU reprogrammable]
     L --- MCUx
     C --- MCUx
     B --- MCUx
